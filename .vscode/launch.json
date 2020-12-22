@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "launch firefox",
+            "url": "http://localhost",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Edge",
+            "request": "launch",
+            "type": "pwa-msedge",
+            "url": "http://localhost",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "PHP XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9003
+        }
+    ],
+    "compounds": [
+        {
+            "name": "PHP/CHROM",
+            "configurations": ["PHP XDebug","Launch Edge", "launch firefox"]
+        }
+    ]
+
+
+}
