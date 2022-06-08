@@ -3,27 +3,23 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
-        {
+    "configurations": [{
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "name": "launch firefox",
-            "url": "http://localhost",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "Launch Edge",
-            "request": "launch",
-            "type": "pwa-msedge",
-            "url": "http://localhost",
-            "webRoot": "${workspaceFolder}"
+            "name": "Launch Firefox",
+            "url": "http://localhost/debug_php",
+            "webRoot": "${workspaceFolder}",
+            "pathMappings": [{
+                "url": "http://localhost/debug_php",
+                "path": "d:/MAMP/htdocs/Git/debug_php"
+            }]
         },
         {
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "http://localhost",
+            "url": "http://localhost/debug_php",
             "webRoot": "${workspaceFolder}"
         },
         {
@@ -33,12 +29,10 @@
             "port": 9003
         }
     ],
-    "compounds": [
-        {
-            "name": "PHP/CHROM",
-            "configurations": ["PHP XDebug","Launch Edge", "launch firefox"]
-        }
-    ]
+    "compounds": [{
+        "name": "PHP/Firefox",
+        "configurations": ["PHP XDebug", "Launch Firefox"]
+    }]
 
 
 }
